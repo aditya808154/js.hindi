@@ -14,9 +14,9 @@
 // let userEmail;
 const id=Symbol('123')
 const anotherId=Symbol('123')
-console.log(id);
-console.log(anotherId);
-console.log(id===anotherId);
+// console.log(id);
+// console.log(anotherId);
+// console.log(id===anotherId);
 
 const bigNumber=655858565236565n;
 
@@ -24,20 +24,45 @@ const bigNumber=655858565236565n;
 
 const heros=["Ram","Aditya","Vijay"];//array
 //objects
-let myObj={
-    name:"Aditay",
-    age:22
-}
+// let myObj={
+//     name:"Aditay",
+//     age:22
+// }
 
 //function
-let hello=function(){
-    console.log("hello world!");
+// let hello=function(){
+//     console.log("hello world!");
     
-}
+// }
 
 // all Non-Primitive datyType return type is objects
 
-console.log(typeof heros);
-console.log(typeof id);
+// console.log(typeof heros);
+// console.log(typeof id);
+
+//==================================================================================
+/**Type of memory:-there are to types
+ * 1.Stack memory(primitive):-variables copy
+ * 2.Heap memory(Non-Primitive):-orginal reference
+ */
+
+let myname="Aditya"
+let anthorName=myname;
+anthorName="Viajy"
+
+// console.log(myname);
+// console.log(anthorName);
+// console.log(myname);
+// console.log(anthorName);
+
+let userOne={
+    name:"Aditya",
+    age:25
+}
+let userTwo=userOne
+userTwo.name="Vijay"
+
+console.log(userOne.name);
+console.log(userTwo.name);
 
 
