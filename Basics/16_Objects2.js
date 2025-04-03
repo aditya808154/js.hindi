@@ -36,7 +36,10 @@ const course={
     courseInstruction:"Aman"
 }
 
-const {courseInstruction}=course
-console.log(courseInstruction);
-const {courseInstruction:Instruction}=course
-console.log(Instruction);
+// const {courseInstruction}=course
+// console.log(courseInstruction);
+// const {courseInstruction:Instruction}=course
+// console.log(Instruction);
+
+
+
