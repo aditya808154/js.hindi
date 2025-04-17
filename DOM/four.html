@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+
+</body>
+<script>
+    function addLanguage(langName){
+        const li=document.createElement('li');
+        li.innerHTML=`${langName}`
+        document.querySelector(".language").append(li)
+    }
+    addLanguage("Python")
+    addLanguage("Java")
+
+    function addOptiLanguage(langName){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").append(li)
+    }
+    addOptiLanguage("MySql");
+    addOptiLanguage("CPP")
+
+    //Edit
+    const second=document.querySelector('li:nth-child(2)')
+    // second.innerHTML="HTML"
+    const newli=document.createElement('li')
+    newli.textContent="HTML"
+    second.replaceWith(newli)
+
+    //Best Edit source
+    const first=document.querySelector("li:first-child")
+    first.outerHTML="<li>UI/UX</li>"
+
+    //Remove
+    const last=document.querySelector('li:last-child')
+    last.remove()
+
+
+
+</script>
+</html>
