@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>XHR GitHub Example</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h2>XHR readyState Status:</h2>
+    <p>0: <strong>UNSENT</strong> – Client has been created, open() not called yet.</p>
+    <p>1: <strong>OPENED</strong> – open() has been called.</p>
+    <p>2: <strong>HEADERS_RECEIVED</strong> – send() called, headers and status available.</p>
+    <p>3: <strong>LOADING</strong> – Downloading; partial data available.</p>
+    <p>4: <strong>DONE</strong> – Operation complete.</p>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';  // ✅ corrected URL
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+
+        xhr.onreadystatechange = function () {
+            console.log("📡 readyState:", xhr.readyState);
+
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(this.responseText);
+                    console.log("📦 Type of data:", typeof data);
+                    console.log("👥 Followers:", data.followers);
+                } else {
+                    console.error("❌ Error: Status", xhr.status);
+                }
+            }
+        };
+
+        xhr.send();
+    </script>
+</body>
+</html>
